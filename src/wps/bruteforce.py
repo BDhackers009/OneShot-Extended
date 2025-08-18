@@ -91,7 +91,7 @@ class Initialize:
             self.CONNECTION.singleConnection(bssid, pin)
 
             if self.CONNECTION_STATUS.isFirstHalfValid():
-                print('[+] First half found')
+                print('[*] First half found')
                 return first_half
 
             if self.CONNECTION_STATUS.STATUS == 'WPS_FAIL':
@@ -171,7 +171,7 @@ class Initialize:
 
             with open(filename, 'w', encoding='utf-8') as file:
                 file.write(self.BRUTEFORCE_STATUS.MASK)
-            print(f'[+] Session saved in {filename}')
+            print(f'[*] Session saved in {filename}')
 
             if args.loop:
                 raise KeyboardInterrupt from e

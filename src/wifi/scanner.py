@@ -58,7 +58,7 @@ class WiFiScanner:
         networks = self._iwScanner()
 
         if not networks:
-            print('[-] No WPS networks found.')
+            print('[!] No WPS networks found.')
             return
 
         while True:

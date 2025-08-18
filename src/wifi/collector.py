@@ -65,7 +65,7 @@ class WiFiCollector:
                 return print(f'[!] Failed to add network to NetworkManager: \n {error}')
 
 
-        print('[+] Access Point was saved to your network manager')
+        print('[*] Access Point was saved to your network manager')
 
     @staticmethod
     def writeResult(bssid: str, essid: str, wps_pin: str, wpa_psk: str):
@@ -96,7 +96,7 @@ class WiFiCollector:
 
             csv_writer.writerow([date_str, bssid, essid, wps_pin, wpa_psk])
 
-        print(f'[+] Credentials saved to {filename}.txt, {filename}.csv')
+        print(f'[*] Credentials saved to {filename}.txt, {filename}.csv')
 
     @staticmethod
     def writePin(bssid: str, pin: str):
@@ -108,4 +108,4 @@ class WiFiCollector:
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(pin)
 
-        print(f'[+] PIN saved in {filename}')
+        print(f'[*] PIN saved in {filename}')

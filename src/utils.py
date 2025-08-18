@@ -51,7 +51,7 @@ def ifaceCtl(interface: str, action: str):
                 print(f'[!] Failed to unblock interface, not continuing: \n {error}')
 
         if 'RF-kill' in command_output_stripped:
-            print('[!] RF-kill is blocking the interface, unblocking')
+            print('[-] RF-kill is blocking the interface, unblocking')
             _rfKillUnblock()
             return
 

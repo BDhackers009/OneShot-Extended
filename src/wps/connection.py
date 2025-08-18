@@ -242,7 +242,7 @@ class Initialize:
 
         if 'M2D' in line:
             print('[-] Received WPS Message M2D')
-            src.utils.die('[-] Error: AP is not ready yet, try later')
+            src.utils.die('[!] Error: AP is not ready yet, try later')
 
         if 'Building Message M' in line:
             n = int(line.split('Building Message M')[1])
@@ -254,12 +254,12 @@ class Initialize:
             self.CONNECTION_STATUS.LAST_M_MESSAGE = n
             print(f'[*] Received WPS Message M{n}')
             if n == 5:
-                print('[+] The first half of the PIN is valid')
+                print('[*] The first half of the PIN is valid')
 
         elif 'Received WSC_NACK' in line:
             self.CONNECTION_STATUS.STATUS = 'WSC_NACK'
             print('[-] Received WSC NACK')
-            print('[-] Error: wrong PIN code')
+            print('[!] Error: wrong PIN code')
 
         elif 'Enrollee Nonce' in line and 'hexdump' in line:
             self._handle_pixie_data('E_NONCE', line, 16 * 2, pixiemode)
@@ -303,7 +303,7 @@ class Initialize:
             print('[*] Authenticating…')
 
         elif 'Authentication response' in line:
-            print('[+] Authenticated')
+            print('[*] Authenticated')
 
         elif 'Trying to associate with' in line:
             self.CONNECTION_STATUS.STATUS = 'associating'

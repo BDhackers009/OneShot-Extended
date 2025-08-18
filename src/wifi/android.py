@@ -38,7 +38,7 @@ class AndroidNetwork:
             if is_scanning_on == '1':
                 self.ENABLED_SCANNING = 1
         except subprocess.CalledProcessError:
-            print('[!] Failed to get initial Wi-Fi scanning state, assuming it\'s enabled')
+            print('[-] Failed to get initial Wi-Fi scanning state, assuming it\'s enabled')
             self.ENABLED_SCANNING = 1
 
     def disableWifi(self, force_disable: bool = False, whisper: bool = False):
@@ -54,14 +54,14 @@ class AndroidNetwork:
         try:
             subprocess.run(wifi_disable_scanner_cmd)
         except subprocess.CalledProcessError:
-            print('[!] Failed to disable Wi-Fi scanner, skipping')
+            print('[-] Failed to disable Wi-Fi scanner, skipping')
 
         # Always scanning for networks causes the interface to be occupied by android
         if self.ENABLED_SCANNING == 1 or force_disable is True:
             try:
                 subprocess.run(wifi_disable_always_scanning_cmd)
             except subprocess.CalledProcessError:
-                print('[!] Failed to disable always-on Wi-Fi scanning, skipping')
+                print('[-] Failed to disable always-on Wi-Fi scanning, skipping')
 
         time.sleep(3)
 
@@ -84,4 +84,4 @@ class AndroidNetwork:
             try:
                 subprocess.run(wifi_enable_always_scanning_cmd)
             except subprocess.CalledProcessError:
-                print('[!] Failed to enable always-on Wi-Fi scanning, skipping')
+                print('[-] Failed to enable always-on Wi-Fi scanning, skipping')
