@@ -68,7 +68,7 @@ class Initialize:
         self.RETSOCK = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
         self.RETSOCK.bind(self.RES_SOCKET_FILE)
 
-        self.DISCONNECT_COUNT = 0  # Add counter
+        self.DISCONNECT_COUNT = 0
 
     @staticmethod
     def _getHex(line: str) -> str:
@@ -106,7 +106,7 @@ class Initialize:
         pixiewps_dir = src.utils.PIXIEWPS_DIR
         generator    = src.wps.generator.WPSpin()
         collector    = src.wifi.collector.WiFiCollector()
-        
+
         # Allow empty string ('') as valid pin (e.g., for null pin attack)
         if pin is None:
             if pixiemode:
