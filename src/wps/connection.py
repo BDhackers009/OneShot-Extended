@@ -329,7 +329,7 @@ class Initialize:
             print('[*] Sending Identity Response…')
 
         elif 'WPS-TIMEOUT' in line:
-            print('[-] Warning: Received WPS-TIMEOUT')
+            print('[-] Received WPS-TIMEOUT. Something might be wrong with the interface ⚠')
 
         elif 'NL80211_CMD_DEL_STATION' in line:
             self.DISCONNECT_COUNT += 1
