@@ -53,34 +53,22 @@ Advanced arguments:
 
 # Installation
 
-## Termux
-**Please note that root access is required.**  
-
-**Installing requirements**
+## Installing pre-requisites
+- **On Termux:**
  ```shell
  pkg install -y root-repo
  pkg install -y git tsu python wpa-supplicant pixiewps iw openssl
  ```
-**Getting OneShot-Extended**
- ```shell
- cd ~
- git clone --depth 1 https://github.com/chickendrop89/OneShot-Extended ose
- ```
-**Running**
- ```shell
- sudo python ose/ose.py -i wlan0
- ```
 
-## Linux distributions 
-**Install these packages through your distro's package manager:**
+- **On Linux distributions. Install these packages through your package manager:**
  ```shell
  python3 wpa-supplicant iw wget pixiewps
  ```
- 
-**Getting OneShot**
+
+## Downloading the repository
  ```shell
  cd ~
- git clone --depth 1 https://github.com/chickendrop89/OneShot-Extended ose
+ git clone https://github.com/chickendrop89/OneShot-Extended ose
  ```
 **Running**
  ```shell
@@ -114,9 +102,6 @@ This happens because something else is trying to use the interface (Wi-Fi scanne
 # Acknowledgements
 * `kimocoder, drygdryg` for the foundation of this project
 * `rofl0r` for original oneshot
-
------
-
 > [!WARNING] 
 > This tool is intended for educational and authorized penetration testing purposes only.
 > It is not designed for, and must not be used for, illegal activities such as hacking, unauthorized access, or causing damage to systems or networks.
